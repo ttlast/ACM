@@ -1,0 +1,19 @@
+poj 2151
+poj 3519
+poj 1189
+poj 3756
+poj 3071
+zoj 2271
+
+foj 1885
+zoj 1349
+zoj 3551
+hdu 4089
+hdu 3071
+hdu 3076
+hdu 4050
+hdu 2955
+hdu 1203
+hdu 4159
+hdu 2955
+bupt 200

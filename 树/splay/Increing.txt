@@ -1,0 +1,89 @@
+#include <iostream>
+#include <vector>
+#include <set>
+#include <map>
+#include <algorithm>
+#include <queue>
+#include <list>
+#include <sstream>
+#include <cstring>
+#include <cstdio>
+#include <cstdlib>
+#include <deque>
+#include <stack>
+#include <bitset>
+#include <functional>
+#include <numeric>
+#include <utility>
+#include <iomanip>
+#include <ctime>
+#include <fstream>
+#include <limits>
+#include <iterator>
+#include <complex>
+#include <climits>
+using namespace std;
+class IncreasingLists{
+  public:
+  string makeIncreasingList(string);
+};
+string mask;
+int st_cou;
+string st[50];
+string minimal(string a,string mask){
+  if (mask.find(',')!=-1 || mask[0]=='0') return "";
+  if (a.size()<mask.size()){
+    if (mask[0]=='?') mask[0]='1';
+    for (int i=1;i<mask.size();++i)
+      if (mask[i]=='?') mask[i]='0';
+    return mask;
+  }
+  int i;
+  for (i=0;i<mask.size() && (mask[i]=='?' || a[i]==mask[i]);++i);
+  if (i==mask.size()) --i;
+  for (;i>=0;--i){
+    if (a[i]!='9' && (mask[i]=='?' || mask[i]>a[i])){
+      if (mask[i]=='?') mask[i]=a[i]+1;
+      for (int j=i+1;j<mask.size();++j)
+        if (mask[j]=='?') mask[j]='0';
+      for (int j=0;j<i;++j)
+        mask[j]=a[j];
+      return mask;
+    }
+  }
+  return "";
+}
+int pos;
+string cur;
+string best;
+void bt(int lev){
+  if (pos==mask.size()){
+    cur="";
+    for (int i=0;i<lev;++i){
+      if (i!=0) cur+=',';
+      cur+=st[i];
+    }
+    if (best=="" || cur<best)
+      best=cur;
+    return;
+  }
+  if (pos!=-1 && mask[pos]!='?' && mask[pos]!=',') return;
+  ++pos;
+  for (int len=max(1,(lev==0?0:(int)st[lev-1].size()));pos+len<=mask.size();++len){
+    st[lev]=mask.substr(pos,len);
+    st[lev]=minimal((lev==0)?"":st[lev-1],st[lev]);
+    if (st[lev]=="") continue;
+    pos+=len;
+    bt(lev+1);
+    pos-=len;
+  }
+  --pos;
+}
+string IncreasingLists::makeIncreasingList(string _mask){
+  mask=_mask;
+  st_cou=0;
+  pos=-1;
+  best="";
+  bt(0);
+  return (best==""?"impossible":best);
+}

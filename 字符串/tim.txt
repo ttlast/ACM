@@ -1,0 +1,152 @@
+说明：小弟才疏学浅，最近发现此文点击率较高，还有一些转载，实在是万分惭愧。
+这份题目推荐里面，实在水题烂题太多，上不得台面，等今年赛区赛结束后，本菜一定好好清理下此贴。
+
+POJ 1002 - 487-3279(基础)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1002
+题意：略
+解法：二叉查找数，map，快排...
+
+POJ 1200 - Crazy Search(基础)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1200
+题意：找出不相同的子串数量，字母表大小和子串长度会给定，这题很推荐hash入门者一做
+解法：hash(建议karp-rabin)
+
+POJ 1204 - Word Puzzles(基础)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1204
+题意：基本多串匹配
+解法：多串匹配自动机（单串去弄肯定会超时）
+
+POJ 1229 - Wild Domains(中等)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1229
+题意：模糊匹配
+解法：dp
+
+POJ 1625 - Censored!(中等)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1625
+题意：求长度为n不包括给定模式串的字符串数量。（题意同2778，但不能按2778的方法，建议先做此题，再做2778）
+解法：Aho-Corasick自动机 + dp
+相关：http://hi.baidu.com/zfy0701/blog/item/c62f41afca8180ca7cd92a19.html
+
+POJ 1743 - Musical Theme(中等)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1743
+题意：找一个串中最长不重叠子串
+解法：后缀数组+二分枚举答案，后缀数组+栈扫描，RK+二分枚举答案
+相关：http://hi.baidu.com/zfy0701/blog/item/f2278a0928991dca3bc763a0.html
+
+POJ 1816 - Wild Words(中等，绝对的Trie应用好题，同时又是搜索好题)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1816
+题意：扩展多串模式匹配(含?, *)
+解法：Trie + dfs，有兴趣也可用基于位并行的自动机(可参考柔性字符串匹配，扩展匹配章节)
+
+POJ 2185 - Milking Grid(中等)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=2185
+题意：最小矩型的覆盖
+解法：KMP (不多的KMP好题)
+相关：http://acm.pku.edu.cn/JudgeOnline/showmessage?message_id=33571
+
+POJ 2513 - Colored Sticks(基础)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=2513
+题意：转化成欧拉回路
+解法：并查集+hash，并查集+Trie
+
+POJ 2774 - Long Long Message(中等)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=2774
+题意：找两个串的公共最长子串
+解法：后缀数组，Oracle Factor自动机，后缀自动机
+相关：http://hi.baidu.com/zfy0701/blog/item/f2278a0928991dca3bc763a0.html
+http://hi.baidu.com/zfy0701/blog/item/d9fedbd14581113d9b5027ab.html
+
+POJ 2778 - DNA Sequence(中等)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=2778
+题意：求长度为n不包括给定模式串的字符串数量。
+解法：Aho-Corasick自动机(前缀树) + 矩阵快速乘法
+相关：http://hi.baidu.com/zfy0701/blog/item/f2278a0928991dca3bc763a0.html
+类似于1625，建议先做1625
+
+POJ 1699 - Best Sequence(基础)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1699
+题意：转换为TSP问题（注意子串的包含关系！）
+解法：回溯，状态dp
+
+POJ 3376 - Finding Palindromes(中等)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3376
+题意：找回文串组合
+解法：找出规律，然后Trie + kmp推广形式
+
+POJ 3415 - Common Substrings(较难)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3415
+题意：统计两个串中长度>=k的公共子串的数量
+解法：后缀数组+栈扫描，后缀自动机
+相关：http://hi.baidu.com/zfy0701/blog/item/f2278a0928991dca3bc763a0.html
+
+POJ 3080 - Blue Jeans(如果用暴力，就很简单)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3080
+题意：求n个串的最长公共子串
+解法：后缀数组+栈扫描，后缀数组+二分枚举，暴力
+相关：http://hi.baidu.com/zfy0701/blog/item/57ada7edf5f44ed1b31cb1cc.html
+
+POJ 3208 - Apocalypse Someday(较难)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3208
+题意：略
+解法：有意思的自动机dp
+
+POJ 3261 - Milk Patterns(中等)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3261
+题意：求一个串中重复出现至少k次的最长子串
+解法：后缀数组+栈扫描，hash + 二分
+
+POJ 3294 - Life Forms(较难，强烈推荐)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3294
+题意：n个串中，为大于n/2个串所共有的所有最长子串
+解法：后缀数组+栈扫描，暴力(很容易被卡掉)，后缀数组+线段树(?)
+相关：http://hi.baidu.com/zfy0701/blog/item/57ada7edf5f44ed1b31cb1cc.html
+
+POJ 3576 - Language Recognition(中等)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3576
+题意：求一个dfa，它满足两个条件，1、能识别所有词的dfa，2、要求状态数最少。
+解法：trie + hash
+相关：http://hi.baidu.com/zfy0701/blog/item/b8332b5cd90e7b45fbf2c033.html
+
+POJ 3581 - Sequence(中等)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3581
+题意：把原串分三段并反转，求字典序最小的那串
+解法：后缀数组
+本来觉得很水，但却是我目前做得最失败的一道后缀数组题
+
+
+POJ 3630 - Phone List(基础，强烈推荐用此题练Trie)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3630
+题意：给n个串，看是否有一个串是另一个串的前缀
+解法：快排，Trie
+
+POJ 3690 - Constellations(基础)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3690
+题意：二维串匹配
+解法：转换为一维，或者用多串匹配
+
+POJ 3691 - DNA repair(中等)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3691
+题意：修复非法字符串需要替换的最少字符数
+解法：动态规划，如果使用AC自动机去做dp的话比较简单且只需要二维，用dp[i][j]表示第i个字符时，第j种状态(不是非法状态)所需要最小的修改量
+
+POJ 3693 - Maximum repetition substring(难)
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3693
+题意：求最循环节最多的子串
+解法：我所知道的最好的做法应该是先做s-factorization(也就是lempel-ziv)，然后在分解之后的每一段中枚举周期，周期可以通过推导关系式确定是否合法，然后可确定循环次数，取最大的，中间还用到了对kmp的扩展。具体来说有KK算法，和ML算法两种，其中ML不能遍历所有的runs。
+
+其他OJ：
+
+SPOJ 2743 - Prefix Tiling
+http://www.spoj.pl/problems/PRETILE/
+找规律
+
+空罐 Cans(这个自动机dp还是有意思的)
+http://cat.nknush.kh.edu.tw/ZeroJudge/ShowProblem?problemid=b179
+
+HDOJ 2471 - History of Languages(杭州现场赛)
+http://acm.hdu.edu.cn/showproblem.php?pid=2471
+自动机的等价性，划分集合的dp
+
+HDU 2967 - Morphing is fun
+http://acm.hdu.edu.cn/showproblem.php?pid=2967
+UVA上也过得人比较少的一道题，需要分情况讨论几种情况，我09年过的最得意的题
